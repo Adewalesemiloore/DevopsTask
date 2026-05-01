@@ -8,11 +8,11 @@ In order to complete this project, I needed to Create, connect and Launch a new 
 
 <br>
 
-![alt text](/Images/1.0%20-%20New%20EC2%20Instance.png)
+![alt text](Images/1.0%20-%20New%20EC2%20Instance.png)
 
 - Connecting to the EC2 Instance Via my terminal
 
-![alt text](/Images/1.2%20-%20Conecting%20to%20EC2%20Instance.png)
+![alt text](Images/1.2%20-%20Conecting%20to%20EC2%20Instance.png)
 
 ## <span style="color:Pink">Step 1 – Installing the Nginx Web Server</span>
 
@@ -21,22 +21,22 @@ Since this is our first time using apt for this session, start off by updating y
 
 1. `sudo apt update`
 
-![alt text](/Images/1.2%20-%20Conecting%20to%20EC2%20Instance.png)
+![alt text](Images/1.2%20-%20Conecting%20to%20EC2%20Instance.png)
 
 2. sudo apt install nginx
 
-![alt text](/Images/1.3%20-%20Installing%20Nginx.png)
+![alt text](Images/1.3%20-%20Installing%20Nginx.png)
 
 
 
 After verifying my Ngingx install with
  `sudo systemctl status nginx` I encountered an error. although it showed that the status was active i could not find a way to quit out of the command. on a little research i found out that q was a way to quit and start over on my terminal
 
-![alt text](/Images/1.4%20Nginx%20status%20error.png)
+![alt text](Images/1.4%20Nginx%20status%20error.png)
 
 To acess the site publicly on my browser i used my public address gotten from the EC2 instance created. 
 
-![alt text](/Images/1.5%20-%20Viewing%20nginx%20via%20public%20port.png)
+![alt text](Images/1.5%20-%20Viewing%20nginx%20via%20public%20port.png)
 
 
 ## <span style="color:lightgreen">STEP 2 — INSTALLING MYSQL</span>
@@ -45,13 +45,13 @@ Now that I had a web server up and running, I needed to install a **DBMS (databa
 
 I used the ‘apt’ to acquire and install this software: `sudo apt install mysql-server`
 
-![alt text](/Images/2.0%20Installing%20SQL.png)
+![alt text](Images/2.0%20Installing%20SQL.png)
 
 When prompted, I confirmed installation by typing Y, and then ENTER.
 
 When the installation was finished, I logged in to the MySQL console by typing: `sudo mysql`
 
-![alt text](/Images/2.1%20Accessing%20mySQL.png)
+![alt text](Images/2.1%20Accessing%20mySQL.png)
 
 
 This Basically connected to the MySQL server as the administrative database user root, which is inferred by the use of sudo when running this command.
@@ -59,7 +59,7 @@ This Basically connected to the MySQL server as the administrative database user
 
 I set a password for the root user, using mysql_native_password as default authentication method. `ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'PassWord.1';`
 
-![alt text](/Images/2.2%20Password%20change%20and%20access%20to%20mySQL.png)
+![alt text](Images/2.2%20Password%20change%20and%20access%20to%20mySQL.png)
 
 and ran a security script `sudo mysql_secure_installation`
 
@@ -140,7 +140,7 @@ When you are ready, reload Nginx to apply the changes:
 `sudo systemctl reload nginx`
 Your new website is now active, but the web root `/var/www/projectLEMP` is still empty. Create an index.html file in that location so that we can test that your new server block works as expected:
 
-![alt text](/Images/4.1%20-%20%20CONFIGURING%20NGINX%20TO%20USE%20PHP%20PROCESSOR.png)
+![alt text](Images/4.1%20-%20%20CONFIGURING%20NGINX%20TO%20USE%20PHP%20PROCESSOR.png)
 
 ## <span style="color:Pink">STEP 5 – TESTING PHP WITH NGINX</span>
 
@@ -151,32 +151,32 @@ You can do this by creating a test PHP file in your document root. Open a new fi
 
 `sudo nano /var/www/projectLEMP/info.php`
 
-![alt text](/Images/5.0%20-%20Testing%20PHP%20on%20nginx.png)
+![alt text](Images/5.0%20-%20Testing%20PHP%20on%20nginx.png)
 
 After this, i tried accessing thr page in my browser and was hit with a bad gateway error. 
 
-![alt text](/Images/5.1%20-%20Testing%20PHP%20on%20nginx%20-%20bad%20gateway.png)
+![alt text](Images/5.1%20-%20Testing%20PHP%20on%20nginx%20-%20bad%20gateway.png)
 
 
 To solve this error i spiraled round a bunch of different fixes. 
 
 1. I edited the Ngingx default to reach my PHP file but this didn't seem to explicitly solve the issue as i was still hit with bad gateway. 
 
-![alt text](/Images/5.2%20-%20Editing%20nginx%20Defaut%20.png)
+![alt text](Images/5.2%20-%20Editing%20nginx%20Defaut%20.png)
 
 2. I figured the issue was that i had installed the latest PHP version copied from the doc the script with version 8.1. so the page version was not visible as a result. 
 
 I caught the error by using `grep -r "php8.1" /etc/nginx/` this pulled what version of PHP was being checked and used. 
 
-![alt text](/Images/5.4%20-%20Php%20version%20visible.png)
+![alt text](Images/5.4%20-%20Php%20version%20visible.png)
 
 I went back into - `#/etc/nginx/sites-available/projectLEMP` and found the version there and changed it to 8.3 which is my current PHP version. 
 
-![alt text](/Images/5.3%20-%20Project%20Lemp%20wrong%20version.png)
+![alt text](Images/5.3%20-%20Project%20Lemp%20wrong%20version.png)
 
 with this i has the page visible publically now. 
 
-![alt text](/Images/5.5%20-%20Php%20version%20visible.png)
+![alt text](Images/5.5%20-%20Php%20version%20visible.png)
 
 
 ## <span style="color:lightgreen">Step 6 — Retrieving data from MySQL database with PHP</span>
@@ -188,7 +188,7 @@ I created a database named example_database and a user named example_user, but I
 First, I connect to the MySQL console using the root account with: 
  `sudo mysql`
 
- ![alt text](/Images/6.0%20Sudo%20Error%20and%20access.png)
+ ![alt text](Images/6.0%20Sudo%20Error%20and%20access.png)
 
  Eventually using `sudo mysql -u root -p` to gain access by putting the password set initially. 
 
@@ -204,7 +204,7 @@ after that i gave the user permission over the example_database database with:
 
 Image as seen below. 
 
-![alt text](/Images/6.1%20Creating%20a%20database%20with%20mysql.png)
+![alt text](Images/6.1%20Creating%20a%20database%20with%20mysql.png)
 
 You can test if the new user has the proper permissions by logging in to the MySQL console again, this time using the custom user credentials:
 
@@ -232,7 +232,7 @@ To confirm that the data was successfully saved to your table, run:
 The above gave me the output below. 
 
 
-![alt text](/Images/6.2%20Creating%20a%20database%20with%20mysql.png)
+![alt text](Images/6.2%20Creating%20a%20database%20with%20mysql.png)
 
 
 The last step in this process was Creating a PHP script that will connect to MySQL and query for your content
@@ -259,4 +259,4 @@ I used `nano /var/www/projectLEMP/todo_list.php` to access the code editor and i
 
 and as a result
 
-![alt text](/Images/6.4%20viewing%20PHP%20script%20on%20public%20domain.png)
+![alt text](Images/6.4%20viewing%20PHP%20script%20on%20public%20domain.png)
