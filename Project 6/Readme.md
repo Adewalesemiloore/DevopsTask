@@ -1,7 +1,4 @@
 
-
-https://github.com/user-attachments/assets/92fe7788-3ae3-4fdf-93bc-66f5a7aa0545
-
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
