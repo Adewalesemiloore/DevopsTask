@@ -1,3 +1,7 @@
+
+
+https://github.com/user-attachments/assets/92fe7788-3ae3-4fdf-93bc-66f5a7aa0545
+
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
@@ -434,7 +438,7 @@ WordPress successfully connected to the remote MySQL database and the setup page
 🎥 **Watch the project walkthrough:**
 
 <p align="center">
-  <video ![Result](./Images/Final%20result.mov) controls style="max-width: 100%; height: auto;">
+  <video src="https://github.com/user-attachments/assets/92fe7788-3ae3-4fdf-93bc-66f5a7aa0545" controls style="max-width: 100%; height: auto;">
   </video>
 
 ---
