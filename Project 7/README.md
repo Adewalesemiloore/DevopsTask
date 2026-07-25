@@ -474,13 +474,6 @@ http://<Web-Server-Public-IP>/index.php
 
 All three web servers successfully mounted the shared NFS storage, connected to the same MySQL database, and served the DevOps Tooling Website independently — confirming the stateless, three-tier architecture works as intended.
 
-🎥 **Watch the project walkthrough:**
-
-<p align="center">
-  <video src="" controls style="max-width: 100%; height: auto;">
-  </video>
-</p>
-
 ---
 
 ## Errors & Fixes
